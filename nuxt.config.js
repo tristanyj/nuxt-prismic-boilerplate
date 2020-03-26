@@ -44,7 +44,16 @@ module.exports = {
 	*/
 	modules: [
 		'@nuxtjs/style-resources',
+		'@/modules/static',
+		'@/modules/crawler',
+		'@nuxtjs/prismic'
 	],
+
+	prismic: {
+		endpoint: '',
+		linkResolver: '@/plugins/link-resolver',
+		htmlSerializer: '@/plugins/html-serializer',
+	},
 
 	styleResources: {
 		stylus: [
@@ -64,7 +73,11 @@ module.exports = {
 		** You can extend webpack config here
 		*/
 		extend(config, ctx) {
-
+			config.resolve.alias['vue'] = 'vue/dist/vue.common'
 		}
+	},
+
+	generate: {
+		fallback: '404.html' // Netlify reads a 404.html, Nuxt will load as an SPA
 	}
 }

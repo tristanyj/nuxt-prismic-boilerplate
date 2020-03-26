@@ -1,17 +1,11 @@
 <template>
-	<div class="container-page container-index">
+	<div class="container-page container-contact">
 		<h1>{{ $prismic.asText(content.title) }}</h1>
-
-		<div v-if="posts.length !== 0">
-      		<section v-for="post in posts" :key="post.id" :post="post">
-        		<post-widget :post="post"></post-widget>
-      		</section>
-    	</div>
 	</div>
 </template>
 
 <style lang="stylus" scoped>
-	.container-index {
+	.container-contact {
 
 	}
 </style>
@@ -19,26 +13,19 @@
 <script>
 	import { TimelineLite } from 'gsap'
 
-	import postWidget from '@/components/post-widget'
-
 	export default {
-		name: 'home',
+		name: 'contact',
 		head() {
 			return {
-				title: 'Home | Nuxt Prismic Boilerplate',
+				title: 'Contact | Nuxt Prismic Boilerplate',
 			}
 		},
 		async asyncData({ $prismic, error }) {
 			try {
-				const page = await $prismic.api.getSingle('home_page')
-				const posts = await $prismic.api.query(
-					$prismic.predicates.at("document.type", "article"),
-					{ orderings : '[my.post.date desc]' }
-				)
+				const page = await $prismic.api.getSingle('contact_page')
 
 				return {
 					content: page.data,
-					posts: posts.results
 				}
 			} catch (e) {
 				error({ statusCode: 404, message: 'Page not found' })
@@ -58,9 +45,6 @@
 
 				tl.add('start')
 			}
-		},
-		components: {
-			'post-widget': postWidget
 		}
 	}
 </script>

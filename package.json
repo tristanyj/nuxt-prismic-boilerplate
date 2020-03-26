@@ -11,9 +11,12 @@
 		"generate": "nuxt generate"
 	},
 	"dependencies": {
+		"@nuxtjs/prismic": "^1.1.1",
 		"cross-env": "^5.2.0",
 		"gsap": "^2.0.2",
 		"nuxt": "^2.11.0",
+		"prismic-javascript": "^2.7.0",
+		"prismic-vue": "^2.0.0",
 		"smoothscroll-polyfill": "^0.4.4",
 		"stylus": "^0.54.5",
 		"stylus-loader": "^3.0.2",

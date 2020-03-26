@@ -6,6 +6,12 @@
 # install dependencies
 $ yarn
 
+# link to your Prismic repository in
+# nuxt.config.js
+prismic: {
+	endpoint: ''
+}
+
 # serve with hot reload at localhost:3000
 $ yarn dev
 
@@ -22,3 +28,8 @@ $ npm install -g plop
 # bootstrap a new component or page
 $ plop 
 ```
+
+# Help 
+
+- [Prismic Vue Documentation](https://prismic.io/docs/vuejs/getting-started/with-the-vuejs-starter)
+- [Prismic Guides](https://user-guides.prismic.io/en/)
