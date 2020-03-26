@@ -1,6 +1,6 @@
 export const state = () => ({
 	data: {
-		title: 'Nuxt Boilerplate',
+		title: 'Nuxt Prismic Boilerplate',
 		loaded: true
 	}
 })

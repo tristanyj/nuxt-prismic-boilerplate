@@ -1,7 +1,7 @@
 {
-	"name": "nuxt-boilerplate",
+	"name": "nuxt-prismic-boilerplate",
 	"version": "1.0.0",
-	"description": "Nuxt Boilerplate",
+	"description": "Nuxt Prismic Boilerplate",
 	"author": "Tristan Lanoye",
 	"private": true,
 	"scripts": {

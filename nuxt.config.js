@@ -3,7 +3,7 @@ const pkg = require('./package')
 module.exports = {
 	mode: 'universal',
 	head: {
-		title: 'Nuxt Boilerplate',
+		title: 'Nuxt Prismic Boilerplate',
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },

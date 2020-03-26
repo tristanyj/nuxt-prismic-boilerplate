@@ -1,4 +1,4 @@
-# Basic Nuxt Boilerplate
+# Nuxt Prismic Boilerplate
 
 # Setup
 
