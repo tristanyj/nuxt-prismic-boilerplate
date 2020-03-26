@@ -1,0 +1,26 @@
+{
+	"name": "nuxt-boilerplate",
+	"version": "1.0.0",
+	"description": "Nuxt Boilerplate",
+	"author": "Tristan Lanoye",
+	"private": true,
+	"scripts": {
+		"dev": "nuxt",
+		"build": "nuxt build",
+		"start": "nuxt start",
+		"generate": "nuxt generate"
+	},
+	"dependencies": {
+		"cross-env": "^5.2.0",
+		"gsap": "^2.0.2",
+		"nuxt": "^2.11.0",
+		"smoothscroll-polyfill": "^0.4.4",
+		"stylus": "^0.54.5",
+		"stylus-loader": "^3.0.2",
+		"vuex-persistedstate": "^3.0.0"
+	},
+	"devDependencies": {
+		"@nuxtjs/style-resources": "^1.0.0",
+		"nodemon": "^1.11.0"
+	}
+}
