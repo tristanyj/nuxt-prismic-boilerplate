@@ -12,7 +12,7 @@
 import LinkResolver from '~/plugins/link-resolver.js'
 
 export default {
-	name: 'PostWidget',
+	name: 'post',
 	props: {
 		post: {
 			type: Object,

@@ -21,7 +21,7 @@
 
 <script>
 export default {
-	name: 'TextSlice',
+	name: 'text-slice',
 	props: {
 		slice: {
 			type: Object,

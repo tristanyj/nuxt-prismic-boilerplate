@@ -10,6 +10,6 @@
 
 <script>
 export default {
-	name: 'DashCaseName'
+	name: '{{ dashCase name }}'
 }
 </script>

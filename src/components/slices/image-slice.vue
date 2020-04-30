@@ -9,7 +9,7 @@
 
 <script>
 export default {
-	name: 'ImageSlice',
+	name: 'image-slice',
 	props: {
 		slice: {
 			type: Object,

@@ -13,10 +13,12 @@
 		"release": "git push --follow-tags origin",
 		"a": "git add .",
 		"c": "commit",
-		"p": "git push origin"
+		"p": "git push origin",
+		"lint": "eslint --ext .js,.vue --ignore-path .gitignore --ignore-pattern src/modules/*/*.plugin.js --ignore-pattern plop-templates/component.vue --ignore-pattern plop-templates/page.vue ."
 	},
 	"husky": {
 		"hooks": {
+			"pre-commit": "yarn lint",
 			"commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
 		}
 	},

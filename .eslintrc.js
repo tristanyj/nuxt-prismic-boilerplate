@@ -43,8 +43,11 @@ module.exports = {
 				void: "always",
 			}
 		}],
+		"vue/component-definition-name-casing": ["error", "kebab-case"],
+		"vue/name-property-casing": ["error", "kebab-case"],
 		"vue/component-name-in-template-casing": ["error", "kebab-case"]
 	},
+	ignorePatterns: ["plop-templates/*.vue"],
 	globals: {
 		$nuxt: true
 	}

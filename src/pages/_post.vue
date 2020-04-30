@@ -14,7 +14,7 @@
 
 <script>
 export default {
-	name: 'Post',
+	name: 'post',
 	async asyncData({ $prismic, params, error }) {
 		try {
 			const page = await $prismic.api.getByUID('post', params.post)

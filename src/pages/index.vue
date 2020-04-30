@@ -24,7 +24,7 @@ import { TimelineLite } from 'gsap'
 import post from '@/components/post'
 
 export default {
-	name: 'Home',
+	name: 'home',
 	components: {
 		post
 	},

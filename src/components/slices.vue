@@ -16,7 +16,7 @@ import textSlice from '@/components/slices/text-slice'
 import imageSlice from '@/components/slices/image-slice'
 
 export default {
-	name: 'Slices',
+	name: 'slices',
 	components: {
 		'text-slice': textSlice,
 		'image-slice': imageSlice
