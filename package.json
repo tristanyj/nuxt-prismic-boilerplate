@@ -10,12 +10,10 @@
 		"start": "nuxt start",
 		"generate": "nuxt generate",
 		"release": "standard-version",
-		"commit": "commit",
-		"lint": ""
+		"commit": "commit"
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "yarn lint",
 			"commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
 		}
 	},
