@@ -1,6 +1,6 @@
 {
 	"name": "nuxt-prismic-boilerplate",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Nuxt Prismic Boilerplate",
 	"author": "Tristan Lanoye",
 	"private": true,
@@ -12,6 +12,7 @@
 		"release": "standard-version",
 		"a": "git add .",
 		"c": "commit",
+		"p": "git push origin",
 		"lint": ""
 	},
 	"husky": {
