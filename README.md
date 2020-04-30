@@ -1,6 +1,6 @@
 # Nuxt Prismic Boilerplate
 
-# Setup
+## Setup
 
 ``` bash
 # install dependencies
@@ -13,17 +13,17 @@ $ yarn dev
 $ yarn generate
 ```
 
-# Optional Commands 
+## Optional Commands
 
 ``` bash
 # install plop globally
 $ npm install -g plop
 
 # bootstrap a new component or page
-$ plop 
+$ plop
 ```
 
-# Help 
+## Help
 
 - [Prismic Vue Documentation](https://prismic.io/docs/vuejs/getting-started/with-the-vuejs-starter)
 - [Prismic Guides](https://user-guides.prismic.io/en/)

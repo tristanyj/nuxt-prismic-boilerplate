@@ -9,11 +9,11 @@
 		"build": "nuxt build",
 		"start": "nuxt start",
 		"generate": "nuxt generate",
-		"release": "standard-version",
+		"standard": "standard-version",
+		"release": "git push --follow-tags origin",
 		"a": "git add .",
 		"c": "commit",
-		"p": "git push origin",
-		"lint": ""
+		"p": "git push origin"
 	},
 	"husky": {
 		"hooks": {
@@ -42,8 +42,14 @@
 		"@commitlint/config-conventional": "^8.3.4",
 		"@commitlint/prompt-cli": "^8.3.5",
 		"@nuxtjs/style-resources": "^1.0.0",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^6.8.0",
+		"eslint-loader": "^4.0.2",
+		"eslint-plugin-nuxt": "^0.5.2",
+		"eslint-plugin-vue": "^6.2.2",
 		"husky": "^4.2.5",
 		"nodemon": "^1.11.0",
+		"prettier": "^2.0.5",
 		"standard-version": "^7.1.0"
 	}
 }

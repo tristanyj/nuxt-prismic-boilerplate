@@ -1,6 +1,8 @@
 <template>
 	<div class="container-page container-post">
-		<h1>{{ $prismic.asText(content.title) }}</h1>
+		<h1>
+			{{ $prismic.asText(content.title) }}
+		</h1>
 	</div>
 </template>
 
@@ -11,23 +13,23 @@
 </style>
 
 <script>
-	export default {
-		name: 'post',
-		head() {
-			return {
-				title: 'Post | Nuxt Prismic Boilerplate',
-			}
-		},
-		async asyncData({ $prismic, params, error }) {
-			try {
-				const page = await $prismic.api.getByUID('post', params.post)
+export default {
+	name: 'Post',
+	async asyncData({ $prismic, params, error }) {
+		try {
+			const page = await $prismic.api.getByUID('post', params.post)
 
-				return {
-					content: page.data
-				}
-			} catch (e) {
-				error({ statusCode: 404, message: 'Page not found' })
+			return {
+				content: page.data
 			}
-		},
-	}
+		} catch (e) {
+			error({ statusCode: 404, message: 'Page not found' })
+		}
+	},
+	head() {
+		return {
+			title: 'Post | Nuxt Prismic Boilerplate',
+		}
+	},
+}
 </script>

@@ -3,7 +3,7 @@
  * @param {Object} options - module options object
  */
 const link = function (options) {
-  this.options.head.link = this.options.head.link || [];
+	this.options.head.link = this.options.head.link || []
 //   this.options.head.link.push(
 //     { rel: "icon", type: "image/x-icon", href: "/favicon/favicon.ico" },
 //     {
@@ -33,6 +33,6 @@ const link = function (options) {
 //       color: options.accentColor
 //     }
 //   );
-};
+}
 
-module.exports = link;
+module.exports = link

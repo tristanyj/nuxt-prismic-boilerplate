@@ -1,22 +1,31 @@
 <template>
-	<footer>
+	<footer v-if="data">
 		<div v-if="data" class="links">
-			<div class="link" v-for="(item, i) in data.links" :key="i">
-				<prismic-link :field="item.link">{{ $prismic.asText(item.label) }}</prismic-link>
+			<div
+				v-for="(item, i) in data.links" :key="i"
+				class="link">
+				<prismic-link :field="item.link">
+					{{ $prismic.asText(slice.primary.description) }}
+				</prismic-link>
 			</div>
 		</div>
 	</footer>
 </template>
 
 <style lang="stylus" scoped>
-	footer {
+footer {
 
-	}
+}
 </style>
 
 <script>
-	export default {
-		name: 'nav-footer',
-		props: ['data']
+export default {
+	name: 'NavFooter',
+	props: {
+		data: {
+			type: Object,
+			default: null
+		}
 	}
+}
 </script>

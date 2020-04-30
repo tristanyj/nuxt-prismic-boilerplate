@@ -1,17 +1,15 @@
 <template>
-	<div class="{{ dashCase name }}-container">
-
-	</div>
+	<div class="{{ dashCase name }}-container" />
 </template>
 
 <style lang="stylus" scoped>
-	.{{ dashCase name }}-container {
+.{{ dashCase name }}-container {
 
-	}
+}
 </style>
 
 <script>
-	export default {
-		name: '{{ dashCase name }}'
-	}
+export default {
+	name: 'DashCaseName'
+}
 </script>

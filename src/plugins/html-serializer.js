@@ -3,7 +3,7 @@
  * https://prismic.io/docs/vuejs/beyond-the-api/html-serializer
  */
 
-import linkResolver from "./link-resolver"
+import linkResolver from './link-resolver'
 import prismicDOM from 'prismic-dom'
 
 const Elements = prismicDOM.RichText.Elements
