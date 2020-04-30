@@ -10,7 +10,7 @@ module.exports = function (plop) {
 		actions: [
 			{
 				type: 'add',
-				path: 'components/{{ dashCase name }}.vue',
+				path: 'src/components/{{ dashCase name }}.vue',
 				templateFile: 'plop-templates/component.vue'
 			}
 		]
@@ -26,7 +26,7 @@ module.exports = function (plop) {
 		actions: [
 			{
 				type: 'add',
-				path: 'pages/{{ dashCase name }}.vue',
+				path: 'src/pages/{{ dashCase name }}.vue',
 				templateFile: 'plop-templates/page.vue'
 			}
 		]

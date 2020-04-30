@@ -6,12 +6,6 @@
 # install dependencies
 $ yarn
 
-# link to your Prismic repository in
-# nuxt.config.js
-prismic: {
-	endpoint: ''
-}
-
 # serve with hot reload at localhost:3000
 $ yarn dev
 

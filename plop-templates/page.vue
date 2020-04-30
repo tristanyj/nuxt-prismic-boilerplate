@@ -1,28 +1,17 @@
 <template>
-	<div class="container-page container-{{ dashCase name }}">
+	<div class="{{ dashCase name }}-container">
 
 	</div>
 </template>
 
 <style lang="stylus" scoped>
-	.container-{{ dashCase name }} {
+	.{{ dashCase name }}-container {
 
 	}
 </style>
 
 <script>
 	export default {
-		name: '{{ dashCase name }}',
-		head () {
-			return {
-				title: 'Page — Title'
-			}
-		},
-		components: {
-
-		},
-		mounted () {
-
-		}
+		name: '{{ dashCase name }}'
 	}
 </script>
