@@ -18,8 +18,8 @@ import imageSlice from '@/components/slices/image-slice'
 export default {
 	name: 'slices',
 	components: {
-		'text-slice': textSlice,
-		'image-slice': imageSlice
+		textSlice,
+		imageSlice
 	},
 	props: {
 		slices: {

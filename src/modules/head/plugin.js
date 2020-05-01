@@ -1,9 +1,9 @@
 import Vue from 'vue'
 
 const TITLE_FORMAT = '<%= options.titleFormat %>'
-const APP_NAME = '<%= options.name %>'
-const APP_DESCRIPTION = '<%= options.description %>'
-const APP_URL = '<%= options.url %>'
+const SITE_NAME = '<%= options.name %>'
+const SITE_DESCRIPTION = '<%= options.description %>'
+const SITE_URL = '<%= options.url %>'
 
 const TITLE_LIMIT = 50
 const DESCRIPTION_LIMIT = 155
@@ -41,24 +41,21 @@ const isUndefined = str => str === __undefined
  */
 const metaTitleTemplate = pageTitle => {
 	if (!isUndefined(pageTitle) && pageTitle && pageTitle.trim()) {
-		return TITLE_FORMAT.replace('%site%', APP_NAME).replace(
+		return TITLE_FORMAT.replace('%site%', SITE_NAME).replace(
 			'%page%',
-			limitLength(pageTitle, TITLE_LIMIT)
-		)
+			limitLength(pageTitle, TITLE_LIMIT))
 	} else {
-		return APP_NAME
+		return SITE_NAME
 	}
 }
 
 const metaDescriptionTemplate = pageDescription => {
-	if (
-		!isUndefined(pageDescription) &&
-    pageDescription &&
-    pageDescription.trim()
-	) {
+	if (!isUndefined(pageDescription) &&
+		pageDescription &&
+		pageDescription.trim()) {
 		return limitLength(pageDescription, DESCRIPTION_LIMIT)
 	} else {
-		return APP_DESCRIPTION
+		return SITE_DESCRIPTION
 	}
 }
 
@@ -91,9 +88,9 @@ Vue.prototype.$buildHead = ({
 			content: path,
 			template: path => {
 				if (path) {
-					return `${APP_URL}${path}`.replace(/\/$/, '')
+					return `${ SITE_URL }${ path }`.replace(/\/$/, '')
 				} else {
-					return APP_URL
+					return SITE_URL
 				}
 			}
 		},
@@ -170,9 +167,9 @@ Vue.prototype.$buildHead = ({
 					{
 						'@context': 'http://schema.org',
 						'@type': 'WebSite',
-						url: `${APP_URL}${path ? path : ''}`.replace(/\/$/, ''),
+						url: `${ SITE_URL }${ path ? path : '' }`.replace(/\/$/, ''),
 						name: title,
-						alternateName: APP_NAME
+						alternateName: SITE_NAME
 					},
 					...additionalStructuredData
 				]),

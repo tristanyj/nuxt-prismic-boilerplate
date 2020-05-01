@@ -1,11 +1,11 @@
 <template>
-	<footer v-if="data">
+	<footer>
 		<div v-if="data" class="links">
 			<div
 				v-for="(item, i) in data.links" :key="i"
 				class="link">
 				<prismic-link :field="item.link">
-					{{ $prismic.asText(slice.primary.description) }}
+					{{ $prismic.asText(item.label) }}
 				</prismic-link>
 			</div>
 		</div>

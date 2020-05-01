@@ -1,5 +1,5 @@
 <template>
-	<header v-if="data">
+	<header>
 		<div v-if="data" class="links">
 			<div
 				v-for="(item, i) in data.links" :key="i"

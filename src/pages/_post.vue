@@ -27,9 +27,32 @@ export default {
 		}
 	},
 	head() {
-		return {
-			title: 'Post | Nuxt Prismic Boilerplate',
-		}
+		const { meta_title, meta_description, meta_image } = this.content
+
+		return this.$buildHead({
+			title: meta_title,
+			description: meta_description,
+			metaImage: {
+				og: undefined /* meta_image.url */,
+				tw: undefined /* meta_image.twitter_variant.url */
+			},
+			path: this.$route.path
+		})
 	},
+	transition: {
+		mode: 'out-in',
+		css: false,
+		appear: true,
+		enter (el, done) {
+			let tl = new TimelineLite({ onComplete: done })
+
+			tl.add('start')
+		},
+		leave (el, done) {
+			let tl = new TimelineLite({ onComplete: done })
+
+			tl.add('start')
+		}
+	}
 }
 </script>

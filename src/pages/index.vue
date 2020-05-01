@@ -46,9 +46,17 @@ export default {
 		}
 	},
 	head() {
-		return {
-			title: 'Home | Nuxt Prismic Boilerplate',
-		}
+		const { meta_title, meta_description, meta_image } = this.content
+
+		return this.$buildHead({
+			title: meta_title,
+			description: meta_description,
+			metaImage: {
+				og: undefined /* meta_image.url */,
+				tw: undefined /* meta_image.twitter_variant.url */
+			},
+			path: this.$route.path
+		})
 	},
 	transition: {
 		mode: 'out-in',

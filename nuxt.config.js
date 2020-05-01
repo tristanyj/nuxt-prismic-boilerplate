@@ -3,71 +3,27 @@ require('dotenv').config()
 const logger = require('consola').withScope('nuxt')
 
 const config = async () => {
-	logger.info({ endpoint: process.env.API_ENDPOINT })
+	logger.info({
+		endpoint: process.env.API_ENDPOINT,
+		name: process.env.SITE_NAME,
+		description: process.env.SITE_DESCRIPTION
+	})
+
+	const links = []
+
+	const scripts = [
+		{ src: 'https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0.0/dist/fetch.umd.min.js' },
+		{ src: 'https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js' },
+		{ src: 'https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js' }
+	]
 
 	return {
 		mode: 'universal',
-		head: {
-			title: 'Nuxt Prismic Boilerplate',
-			meta: [
-				{ charset: 'utf-8' },
-				{
-					name: 'viewport',
-					content: 'width=device-width, initial-scale=1'
-				},
-				{
-					hid: 'description',
-					name: 'description',
-					content: 'Placeholder description'
-				}
-			],
-			link: [{
-				rel: 'icon',
-				type: 'image/x-icon',
-				href: '/favicon/favicon.ico'
-			},
-			{
-				rel: 'icon',
-				type: 'image/png',
-				sizes: '16x16',
-				href: '/favicon/favicon-16x16.png'
-			},
-			{
-				rel: 'icon',
-				type: 'image/png',
-				sizes: '32x32',
-				href: '/favicon/favicon-32x32.png'
-			},
-			{
-				rel: 'apple-touch-icon',
-				sizes: '180x180',
-				href: '/favicon/apple-touch-icon.png'
-			},
-			{
-				rel: 'manifest',
-				href: '/favicon/site.webmanifest'
-			},
-			{
-				rel: 'mask-icon',
-				href: '/favicon/safari-pinned-tab.svg',
-				color: '#5bbad5'
-			}],
-			script: [
-				{
-					src:
-						'https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0.0/dist/fetch.umd.min.js'
-				},
-				{
-					src:
-						'https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js'
-				}
-			]
-		},
 
 		/*
 		 ** Customize the progress-bar color
 		 */
-		loading: { color: '#fff' },
+		loading: { color: process.env.SITE_ACCENT_COLOR || '#111111' },
 
 		/*
 		 ** Global CSS
@@ -82,19 +38,68 @@ const config = async () => {
 		/*
 		 ** Nuxt.js modules
 		 */
-		modules: [],
-
-		buildModules: [
-			'@nuxtjs/style-resources',
-			'@nuxtjs/gtm',
-			'@/modules/static',
-			'@/modules/crawler',
-			// '@/modules/head',
-			'@nuxtjs/prismic'
+		modules: [
+			'@nuxtjs/robots',
+			'@nuxtjs/prismic',
+			'@nuxtjs/sentry',
+			'@nuxtjs/device'
 		],
 
+		buildModules: [
+			'@aceforth/nuxt-optimized-images',
+			'@aceforth/nuxt-netlify',
+			'@nuxtjs/sitemap',
+			'@nuxtjs/style-resources',
+			'@nuxtjs/global-components',
+			'@nuxtjs/gtm',
+			'@nuxtjs/pwa',
+			'@/modules/static',
+			'@/modules/crawler',
+			['@/modules/head', {
+				lang: process.env.SITE_LANG,
+				name: process.env.SITE_NAME,
+				description: process.env.SITE_DESCRIPTION,
+				metaImage: {
+					og: process.env.SITE_METAIMG_OG,
+					tw: process.env.SITE_METAIMG_TW
+				},
+				twitterHandle: process.env.SITE_TWITTER_HANDLE,
+				script: scripts,
+				backgroundColor: process.env.SITE_BACKGROUND_COLOR || '#FEFEFE',
+				accentColor: process.env.SITE_ACCENT_COLOR || '#111111',
+				titleFormat: process.env.SITE_TITLE_FORMAT,
+				url: process.env.NODE_ENV === 'development' ? 'localhost:3000' : process.env.SITE_URL
+			}],
+		],
+
+		optimizedImages: {
+			optimizeImages: true
+		},
+
+		sentry: {
+			dsn: process.env.SENTRY_DSN
+		},
+
+		netlify: {
+			header: {},
+			redirects: []
+		},
+
 		gtm: {
-			id: 'GTM-XXXXXXX'
+			dev: process.env.NODE_ENV !== 'development',
+			pageTracking: true,
+			id: process.env.GTM_ID
+		},
+
+		pwa: {
+			manifest: {
+				lang: process.env.SITE_LANG,
+				name: process.env.SITE_NAME,
+				short_name: process.env.SITE_NAME,
+				description: process.env.SITE_DESCRIPTION,
+				background_color: process.env.SITE_BACKGROUND_COLOR || '#FEFEFE',
+				theme_color: process.env.SITE_ACCENT_COLOR || '#111111'
+		 	}
 		},
 
 		prismic: {
@@ -111,6 +116,11 @@ const config = async () => {
 
 		router: {
 			base: '/'
+		},
+
+		sitemap: {
+			hostname: process.env.SITE_URL,
+			gzip: true
 		},
 
 		/*

@@ -18,10 +18,11 @@ module.exports = function (moduleOptions) {
 			tw: undefined
 		},
 		twitterHandle: undefined,
+		link: [],
 		script: [],
 		backgroundColor: '#fefefe',
 		accentColor: '#111111',
-		titleFormat: '%page% - %site%',
+		titleFormat: '%page% | %site%',
 		url: undefined
 	})
 
