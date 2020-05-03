@@ -1,15 +1,20 @@
 <template>
-	<div class="{{ dashCase name }}-container" />
+	<div class="component {{ dashCase name }}" />
 </template>
 
 <style lang="stylus" scoped>
-.{{ dashCase name }}-container {
+.component.{{ dashCase name }} {
 
 }
 </style>
 
 <script>
 export default {
-	name: '{{ dashCase name }}'
+	props: {
+		prop: {
+			type: String,
+			default: null
+		}
+	}
 }
 </script>

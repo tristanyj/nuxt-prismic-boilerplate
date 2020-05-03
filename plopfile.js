@@ -3,15 +3,22 @@ module.exports = function (plop) {
 		description: 'Create New Component',
 		prompts: [
 			{
+				type: 'input',
 				name: 'name',
-				message: 'Component Name'
+				message: 'Component name'
+			},
+			{
+				type: 'input',
+				name: 'folder',
+				message: 'Component folder'
 			}
 		],
 		actions: [
 			{
 				type: 'add',
-				path: 'src/components/{{ dashCase name }}.vue',
-				templateFile: 'plop-templates/component.vue'
+				path: 'src/components/{{ pathCase folder }}/{{ dashCase name }}.vue',
+				templateFile: 'plop-templates/component.vue',
+				abortOnFail: true
 			}
 		]
 	})
@@ -19,15 +26,22 @@ module.exports = function (plop) {
 		description: 'Create New Page',
 		prompts: [
 			{
+				type: 'input',
 				name: 'name',
-				message: 'Page Name'
-			}
+				message: 'Page name'
+			},
+			{
+				type: 'input',
+				name: 'folder',
+				message: 'Page folder'
+			},
 		],
 		actions: [
 			{
 				type: 'add',
-				path: 'src/pages/{{ dashCase name }}.vue',
-				templateFile: 'plop-templates/page.vue'
+				path: 'src/pages/{{ pathCase folder }}/{{ name }}.vue',
+				templateFile: 'plop-templates/page.vue',
+				abortOnFail: true
 			}
 		]
 	})
