@@ -1,0 +1,13 @@
+# Global context
+[dev]
+   	command = "yarn dev"
+
+[build]
+  # Base directory
+  base = ""
+  # Build command
+  command = "yarn generate"
+  # Build directory
+  publish = "dist/"
+  # Serverless Lambda functions
+  functions = "functions/"
