@@ -4,11 +4,11 @@
 			{{ $prismic.asText(content.title) }}
 		</h1>
 
-		<div v-if="posts.length !== 0">
+		<!-- <div v-if="posts.length !== 0">
 			<section v-for="post in posts" :key="post.id">
 				<post :post="post" />
 			</section>
-		</div>
+		</div> -->
 	</div>
 </template>
 
@@ -24,21 +24,21 @@ import { TimelineLite } from 'gsap'
 import post from '~/components/post'
 
 export default {
-	components: {
-		post
-	},
+	// components: {
+	// 	post
+	// },
 	async asyncData({ $prismic, error }) {
 		try {
 			const page = await $prismic.api.getSingle('home_page')
 
-			const posts = await $prismic.api.query(
-				$prismic.predicates.at('document.type', 'post'),
-				{ orderings : '[document.last_publication_date desc]' }
-			)
+			// const posts = await $prismic.api.query(
+			// 	$prismic.predicates.at('document.type', 'post'),
+			// 	{ orderings : '[document.last_publication_date desc]' }
+			// )
 
 			return {
 				content: page.data,
-				posts: posts.results
+				// posts: posts.results
 			}
 		} catch (e) {
 			error({ statusCode: 404, message: 'Page not found' })
