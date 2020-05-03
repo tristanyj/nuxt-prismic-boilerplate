@@ -1,5 +1,7 @@
 <template>
-	<div class="component {{ dashCase name }}" />
+	<div class="component {{ dashCase name }}">
+		<!-- content -->
+	</div>
 </template>
 
 <style lang="stylus" scoped>

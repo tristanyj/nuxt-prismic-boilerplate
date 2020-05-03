@@ -1,6 +1,6 @@
 <template>
 	<nuxt-link :to="link">
-		<div class="post">
+		<div class="component post">
 			<h2>
 				{{ $prismic.asText(post.data.title) }}
 			</h2>
@@ -12,7 +12,6 @@
 import LinkResolver from '~/plugins/link-resolver.js'
 
 export default {
-	name: 'post',
 	props: {
 		post: {
 			type: Object,

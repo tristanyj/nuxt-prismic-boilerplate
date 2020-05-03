@@ -1,5 +1,5 @@
 <template>
-	<div v-if="slice" class="image-slice-container">
+	<div v-if="slice" class="component image-slice">
 		<prismic-image :field="slice.primary.image" />
 		<div v-if="$prismic.asText(slice.primary.description)" class="caption">
 			<span>{{ $prismic.asText(slice.primary.description) }}</span>
@@ -9,7 +9,6 @@
 
 <script>
 export default {
-	name: 'image-slice',
 	props: {
 		slice: {
 			type: Object,

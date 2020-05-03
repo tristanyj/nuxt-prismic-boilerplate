@@ -20,7 +20,6 @@ footer {
 
 <script>
 export default {
-	name: 'nav-footer',
 	props: {
 		data: {
 			type: Object,

@@ -1,6 +1,6 @@
 <template>
-	<div v-if="slice" class="text-slice-container">
-		<div v-if="slice.primary.heading" class="heading-container">
+	<div v-if="slice" class="component text-slice">
+		<div v-if="slice.primary.heading" class="heading">
 			<prismic-rich-text :field="slice.primary.heading" />
 		</div>
 		<div class="paragraphs">
@@ -14,14 +14,13 @@
 </template>
 
 <style lang="stylus" scoped>
-.text-slice-container {
+.component.text-slice {
 
 }
 </style>
 
 <script>
 export default {
-	name: 'text-slice',
 	props: {
 		slice: {
 			type: Object,

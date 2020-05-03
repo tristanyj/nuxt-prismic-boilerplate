@@ -13,6 +13,8 @@
 </style>
 
 <script>
+import { TimelineLite } from 'gsap'
+
 export default {
 	name: 'post',
 	async asyncData({ $prismic, params, error }) {
@@ -25,6 +27,9 @@ export default {
 		} catch (e) {
 			error({ statusCode: 404, message: 'Page not found' })
 		}
+	},
+	mounted() {
+		console.log({ page: this.$route.name })
 	},
 	head() {
 		const { meta_title, meta_description, meta_image } = this.content

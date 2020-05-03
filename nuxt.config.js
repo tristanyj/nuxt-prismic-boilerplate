@@ -41,7 +41,7 @@ const config = async () => {
 		modules: [
 			'@nuxtjs/robots',
 			'@nuxtjs/prismic',
-			'@nuxtjs/sentry',
+			// '@nuxtjs/sentry',
 			'@nuxtjs/device'
 		],
 
@@ -77,7 +77,7 @@ const config = async () => {
 		},
 
 		sentry: {
-			dsn: process.env.SENTRY_DSN
+			// dsn: process.env.SENTRY_DSN
 		},
 
 		netlify: {

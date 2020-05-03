@@ -1,5 +1,5 @@
 <template>
-	<div class="container-page container-index">
+	<div class="page index">
 		<h1>
 			{{ $prismic.asText(content.title) }}
 		</h1>
@@ -13,7 +13,7 @@
 </template>
 
 <style lang="stylus" scoped>
-	.container-index {
+	.page.index {
 
 	}
 </style>
@@ -21,10 +21,9 @@
 <script>
 import { TimelineLite } from 'gsap'
 
-import post from '@/components/post'
+import post from '~/components/post'
 
 export default {
-	name: 'home',
 	components: {
 		post
 	},
@@ -44,6 +43,9 @@ export default {
 		} catch (e) {
 			error({ statusCode: 404, message: 'Page not found' })
 		}
+	},
+	mounted() {
+		console.log({ page: this.$route.name })
 	},
 	head() {
 		const { meta_title, meta_description, meta_image } = this.content

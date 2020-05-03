@@ -20,7 +20,6 @@ header {
 
 <script>
 export default {
-	name: 'nav-header',
 	props: {
 		data: {
 			type: Object,
