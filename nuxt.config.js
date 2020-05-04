@@ -4,6 +4,8 @@ const logger = require('consola').withScope('nuxt')
 
 const config = async () => {
 	logger.info({
+		env: process.env.NODE_ENV,
+		lang: process.env.SITE_LANG,
 		endpoint: process.env.API_ENDPOINT,
 		name: process.env.SITE_NAME,
 		description: process.env.SITE_DESCRIPTION
@@ -42,7 +44,8 @@ const config = async () => {
 			'@nuxtjs/robots',
 			'@nuxtjs/prismic',
 			// '@nuxtjs/sentry',
-			'@nuxtjs/device'
+			'@nuxtjs/device',
+			// 'nuxt-i18n'
 		],
 
 		buildModules: [
@@ -79,6 +82,15 @@ const config = async () => {
 			// dsn: process.env.SENTRY_DSN
 		},
 
+		i18n: {
+			locales: ['en', 'fr'],
+			defaultLocale: process.env.SITE_LANG,
+			vueI18n: {
+				fallbackLocale: process.env.SITE_LANG
+			},
+			parsePages: false
+		},
+
 		netlify: {
 			header: {},
 			redirects: []
@@ -92,8 +104,8 @@ const config = async () => {
 
 		prismic: {
 			endpoint: process.env.API_ENDPOINT,
-			linkResolver: '@/plugins/link-resolver',
-			htmlSerializer: '@/plugins/html-serializer'
+			linkResolver: '~/plugins/link-resolver',
+			htmlSerializer: '~/plugins/html-serializer'
 		},
 
 		styleResources: {

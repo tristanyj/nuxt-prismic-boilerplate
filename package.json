@@ -33,6 +33,7 @@
 		"gsap": "^3.2.6",
 		"lodash": "^4.17.15",
 		"nuxt": "^2.12.2",
+		"nuxt-i18n": "^6.11.0",
 		"prismic-dom": "^2.2.3",
 		"prismic-javascript": "^2.7.1",
 		"prismic-vue": "^2.0.0",

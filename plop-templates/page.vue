@@ -17,7 +17,7 @@ export default {
 	components: {
 
 	},
-	async asyncData({ $prismic, params, error }) {
+	async asyncData({ $prismic, params, app, error }) {
 		try {
 			const page = await $prismic.api.getSingle('home_page')
 			// const page = await $prismic.api.getByUID('post', params.post)

@@ -17,7 +17,7 @@ import { TimelineLite } from 'gsap'
 
 export default {
 	name: 'post',
-	async asyncData({ $prismic, params, error }) {
+	async asyncData({ $prismic, params, app, error }) {
 		try {
 			const page = await $prismic.api.getByUID('post', params.post)
 

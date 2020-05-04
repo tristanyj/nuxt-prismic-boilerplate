@@ -27,7 +27,7 @@ export default {
 	// components: {
 	// 	post
 	// },
-	async asyncData({ $prismic, error }) {
+	async asyncData({ $prismic, app, error }) {
 		try {
 			const page = await $prismic.api.getSingle('home_page')
 
