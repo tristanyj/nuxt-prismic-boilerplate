@@ -52,7 +52,6 @@ const config = async () => {
 			'@nuxtjs/style-resources',
 			'@nuxtjs/global-components',
 			'@nuxtjs/gtm',
-			'@nuxtjs/pwa',
 			'@/modules/static',
 			'@/modules/crawler',
 			['@/modules/head', {
@@ -89,17 +88,6 @@ const config = async () => {
 			dev: process.env.NODE_ENV !== 'development',
 			pageTracking: true,
 			id: process.env.GTM_ID
-		},
-
-		pwa: {
-			manifest: {
-				lang: process.env.SITE_LANG,
-				name: process.env.SITE_NAME,
-				short_name: process.env.SITE_NAME,
-				description: process.env.SITE_DESCRIPTION,
-				background_color: process.env.SITE_BACKGROUND_COLOR || '#FEFEFE',
-				theme_color: process.env.SITE_ACCENT_COLOR || '#111111'
-		 	}
 		},
 
 		prismic: {
