@@ -19,7 +19,18 @@ export default {
 	},
 	async asyncData({ $prismic, params, app, error }) {
 		try {
-			const page = await $prismic.api.getSingle('home_page')
+			let locale
+
+			switch(app.i18n.locale) {
+				case 'fr':
+					locale = 'fr-fr'
+					break
+				case 'en':
+					locale = 'en-us'
+					break
+			}
+
+			const page = await $prismic.api.getSingle('home_page', { lang: locale })
 			// const page = await $prismic.api.getByUID('post', params.post)
 
 			// const posts = await $prismic.api.query(
