@@ -35,7 +35,9 @@ const config = async () => {
 		/*
 		 ** Plugins to load before mounting the App
 		 */
-		plugins: [{ src: '~/plugins/vuex-persist', mode: 'client' }],
+		plugins: [
+			// { src: '~/plugins/vuex-persist', mode: 'client' }
+		],
 
 		/*
 		 ** Nuxt.js modules
@@ -83,11 +85,32 @@ const config = async () => {
 		},
 
 		i18n: {
-			locales: ['en', 'fr'],
+			locales: [
+				{ 
+					code: 'en',
+					file: 'en-US.js'
+				},
+				{
+					code: 'fr',
+					file: 'fr-FR.js'
+				}
+			],
 			defaultLocale: process.env.SITE_LANG,
 			vueI18n: {
 				fallbackLocale: process.env.SITE_LANG
 			},
+			pages: {
+				// contact: {
+				// 	en: '/contact',
+				// 	fr: '/contact',
+				// }
+			},
+			detectBrowserLanguage: {
+				useCookie: true,
+				cookieKey: 'i18n_redirected'
+			},
+			lazy: true,
+			langDir: 'lang/',
 			parsePages: false
 		},
 

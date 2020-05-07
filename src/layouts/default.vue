@@ -1,9 +1,9 @@
 <template>
 	<div class="__layout-wrapper">
 		<div class="__content-wrapper">
-			<nav-header :data="header" />
+			<!-- <nav-header :data="header" /> -->
 			<nuxt />
-			<nav-footer :data="footer" />
+			<!-- <nav-footer :data="footer" /> -->
 		</div>
 	</div>
 </template>
@@ -21,18 +21,11 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import navHeader from '@/components/navigation/header'
-import navFooter from '@/components/navigation/footer'
-
 export default {
-	components: {
-		navHeader,
-		navFooter
-	},
 	computed: {
 		...mapGetters({
-			header: 'GET_HEADER',
-			footer: 'GET_FOOTER',
+			// header: 'GET_HEADER',
+			// footer: 'GET_FOOTER',
 		})
 	}
 }
