@@ -1,8 +1,8 @@
 <template>
 	<div class="layout main">
-		<div class="__content-wrapper">
+		<wrapper>
 			<nuxt />
-		</div>
+		</wrapper>
 	</div>
 </template>
 
