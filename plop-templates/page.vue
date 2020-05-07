@@ -1,6 +1,11 @@
 <template>
 	<div class="page {{ dashCase name }}">
-		<!-- content -->
+		<container>
+			<!-- <nav-header :menu="menu" /> -->
+			<h1>
+				{{ $prismic.asText(content.title) }}
+			</h1>
+		</container>
 	</div>
 </template>
 
@@ -31,6 +36,7 @@ export default {
 			}
 
 			const page = await $prismic.api.getSingle('home_page', { lang: locale })
+			// const menu = await $prismic.api.getSingle('menu', { lang: locale })
 			// const page = await $prismic.api.getByUID('post', params.post)
 
 			// const posts = await $prismic.api.query(
@@ -40,6 +46,7 @@ export default {
 
 			return {
 				content: page.data,
+				// menu: menu.data
 				// posts: posts.results
 			}
 		} catch (e) {

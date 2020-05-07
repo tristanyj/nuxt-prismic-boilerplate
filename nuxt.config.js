@@ -47,7 +47,7 @@ const config = async () => {
 			'@nuxtjs/prismic',
 			// '@nuxtjs/sentry',
 			'@nuxtjs/device',
-			'nuxt-i18n'
+			// 'nuxt-i18n'
 		],
 
 		buildModules: [

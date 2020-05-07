@@ -1,8 +1,11 @@
 <template>
 	<div class="container-page container-post">
-		<h1>
-			{{ $prismic.asText(content.title) }}
-		</h1>
+		<container>
+			<!-- <nav-header :menu="menu" /> -->
+			<h1>
+				{{ $prismic.asText(content.title) }}
+			</h1>
+		</container>
 	</div>
 </template>
 
@@ -20,9 +23,11 @@ export default {
 	async asyncData({ $prismic, params, app, error }) {
 		try {
 			const page = await $prismic.api.getByUID('post', params.post)
+			// const menu = await $prismic.api.getSingle('menu', { lang: locale })
 
 			return {
-				content: page.data
+				content: page.data,
+				// menu: menu.data
 			}
 		} catch (e) {
 			error({ statusCode: 404, message: 'Page not found' })
