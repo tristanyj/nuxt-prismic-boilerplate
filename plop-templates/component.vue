@@ -12,11 +12,5 @@
 
 <script>
 export default {
-	props: {
-		prop: {
-			type: String,
-			default: null
-		}
-	}
 }
 </script>

@@ -11,9 +11,5 @@ export default function(doc) {
 		return '/'
 	}
 
-	if (doc.type === 'post') {
-		return `/${ doc.uid }`
-	}
-
 	return '/not-found'
 }

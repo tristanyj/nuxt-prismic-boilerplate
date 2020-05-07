@@ -1,12 +1,11 @@
 <template>
-	<div class="component segment">
+	<div class="component wrapper">
 		<slot />
 	</div>
 </template>
 
 <style lang="stylus" scoped>
-.component.segment {
-	padding 40px
+.component.wrapper {
 }
 </style>
 

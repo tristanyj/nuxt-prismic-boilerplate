@@ -33,10 +33,17 @@ const config = async () => {
 		css: ['~/assets/styles/main.styl'],
 
 		/*
+		 ** Global variables & mixins
+		 */
+		styleResources: {
+			stylus: ['~/assets/styles/system.styl']
+		},
+
+		/*
 		 ** Plugins to load before mounting the App
 		 */
 		plugins: [
-			// { src: '~/plugins/vuex-persist', mode: 'client' }
+			{ src: '~/plugins/vuex-persist', mode: 'client' }
 		],
 
 		/*
@@ -45,10 +52,12 @@ const config = async () => {
 		modules: [
 			'@nuxtjs/robots',
 			'@nuxtjs/prismic',
-			// '@nuxtjs/sentry',
 			'@nuxtjs/device',
 		],
 
+		/*
+		 ** Nuxt.js build modules
+		 */
 		buildModules: [
 			'@aceforth/nuxt-optimized-images',
 			'@aceforth/nuxt-netlify',
@@ -56,9 +65,9 @@ const config = async () => {
 			'@nuxtjs/style-resources',
 			'@nuxtjs/global-components',
 			'@nuxtjs/gtm',
-			'@/modules/static',
-			'@/modules/crawler',
-			['@/modules/head', {
+			'~/modules/static',
+			'~/modules/crawler',
+			['~/modules/head', {
 				lang: process.env.SITE_LANG,
 				name: process.env.SITE_NAME,
 				description: process.env.SITE_DESCRIPTION,
@@ -75,74 +84,57 @@ const config = async () => {
 			}],
 		],
 
+		/*
+		 ** Nuxt.js image optimization configuration
+		 */
 		optimizedImages: {
 			optimizeImages: true
 		},
 
-		sentry: {
-			// dsn: process.env.SENTRY_DSN
-		},
-
-		i18n: {
-			locales: [
-				{ 
-					code: 'en',
-					file: 'en-US.js'
-				},
-				{
-					code: 'fr',
-					file: 'fr-FR.js'
-				}
-			],
-			defaultLocale: process.env.SITE_LANG,
-			vueI18n: {
-				fallbackLocale: process.env.SITE_LANG
-			},
-			pages: {
-				// contact: {
-				// 	en: '/contact',
-				// 	fr: '/contact',
-				// }
-			},
-			detectBrowserLanguage: {
-				useCookie: true,
-				cookieKey: 'i18n_redirected'
-			},
-			lazy: true,
-			langDir: 'lang/',
-			parsePages: false
-		},
-
+		/*
+		 ** Netlify headers and redirects
+		 */
 		netlify: {
 			header: {},
 			redirects: []
 		},
 
+		/*
+		 ** Google tag manager configuration
+		 */
 		gtm: {
 			dev: process.env.NODE_ENV !== 'development',
 			pageTracking: true,
 			id: process.env.GTM_ID
 		},
 
+		/*
+		 ** Prismic configuration
+		 */
 		prismic: {
 			endpoint: process.env.API_ENDPOINT,
 			linkResolver: '~/plugins/link-resolver',
 			htmlSerializer: '~/plugins/html-serializer'
 		},
 
-		styleResources: {
-			stylus: ['./assets/styles/system.styl']
-		},
-
-		srcDir: 'src/',
-
-		router: {
-			base: '/'
-		},
-
+		/*
+		 ** Sitemap generation configuration
+		 */
 		sitemap: {
 			hostname: process.env.SITE_URL,
 			gzip: true
+		},
+
+		/*
+		 ** Source directory
+		 */
+		srcDir: 'src/',
+
+		/*
+		 ** Production base directory
+		 */
+		router: {
+			base: '/'
 		},
 
 		/*
@@ -157,6 +149,9 @@ const config = async () => {
 			}
 		},
 
+		/*
+		 ** Generate configuration
+		 */
 		generate: {
 			fallback: true
 			// Netlify reads a 404.html, Nuxt will load as an SPA
