@@ -30,13 +30,25 @@ const config = async () => {
 		/*
 		 ** Global CSS
 		 */
-		css: ['~/assets/styles/main.styl'],
+		css: [
+			'~/assets/styles/core/tailwind.css',
+			'~/assets/styles/main.styl'
+		],
 
 		/*
 		 ** Global variables & mixins
 		 */
 		styleResources: {
 			stylus: ['~/assets/styles/system.styl']
+		},
+
+		/*
+		 ** Tailwind configuration
+		 */
+		tailwindcss: {
+			configPath: '../tailwind.config.js',
+			cssPath: '~/assets/styles/core/tailwind.css',
+			exposeConfig: true
 		},
 
 		/*
@@ -61,8 +73,10 @@ const config = async () => {
 		buildModules: [
 			'@aceforth/nuxt-optimized-images',
 			'@aceforth/nuxt-netlify',
+			'@teamnovu/nuxt-breaky',
 			'@nuxtjs/sitemap',
 			'@nuxtjs/style-resources',
+			'@nuxtjs/tailwindcss',
 			'@nuxtjs/global-components',
 			'@nuxtjs/gtm',
 			'~/modules/static',

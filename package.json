@@ -50,6 +50,8 @@
 		"@nuxtjs/robots": "^2.4.2",
 		"@nuxtjs/sitemap": "^2.2.1",
 		"@nuxtjs/style-resources": "^1.0.0",
+		"@nuxtjs/tailwindcss": "^2.0.0",
+		"@teamnovu/nuxt-breaky": "^1.2.1",
 		"babel-eslint": "^10.1.0",
 		"eslint": "^6.8.0",
 		"eslint-loader": "^4.0.2",
