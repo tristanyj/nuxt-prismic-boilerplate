@@ -13,6 +13,8 @@ $ yarn add @nuxtjs/sentry
 
 ## Setup
 
+Create a Sentry account [here](https://sentry.io/signup/).
+
 Add your Sentry DSN key to the `.env` config :
 
 ```env
@@ -31,7 +33,6 @@ sentry: {
 }
 ```
 
-Create a Sentry account [here](https://sentry.io/signup/).
 To activate your account, create an error in any `.vue` or `.js` file by calling any undefined function :
 
 ```js
