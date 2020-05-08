@@ -3,20 +3,43 @@ module.exports = function (plop) {
 		description: 'Create New Component',
 		prompts: [
 			{
-				type: 'input',
-				name: 'name',
-				message: 'Component name'
+				type: 'list',
+				name: 'category',
+				message: 'Component category',
+				choices: [
+				  	{
+						name: 'Controls (Component manipulating data)',
+						value: 'controls'
+				  	},
+				  	{
+						name: 'Display (Component displaying data)',
+						value: 'display'
+				  	},
+				  	{
+						name: 'Layouts (Component providing structure)',
+						value: 'layout'
+				  	},
+				  	{
+						name: 'Partials (Component appearing commonly)',
+						value: 'partials'
+				  	}
+				]
 			},
 			{
 				type: 'input',
 				name: 'folder',
 				message: 'Component folder'
+			},
+			{
+				type: 'input',
+				name: 'name',
+				message: 'Component name'
 			}
 		],
 		actions: [
 			{
 				type: 'add',
-				path: 'src/components/{{ pathCase folder }}/{{ dashCase name }}.vue',
+				path: 'src/components/{{ lowerCase category }}/{{ pathCase folder }}/{{ dashCase name }}.vue',
 				templateFile: 'plop-templates/component.vue',
 				abortOnFail: true
 			}

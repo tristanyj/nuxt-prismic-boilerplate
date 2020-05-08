@@ -35,17 +35,14 @@ This boilerplate uses Commitlint and Standard Version to enable commit linting b
 Here are some useful commands :
 
 ``` bash
-# git add .
-$ yarn a
-
-# git commit, with conventional commit helper
-$ yarn c
+# git add . && git commit, with conventional commit helper
+$ yarn commit
 
 # git push origin *branch*
-$ yarn p *insert branch*
+$ yarn push *insert branch*
 
-# generate a new release and changelog 
-$ yarn standard
+# create a new release and push to git
+$ yarn release
 ```
 
 ## Plop

@@ -17,7 +17,7 @@ module.exports = {
 	'scope-enum': [
 		2,
 		'always',
-		['core', 'config', 'package', 'lang']
+		['core', 'config', 'package', 'lang', 'style']
 	],
 	'scope-empty': [2, 'never']
 }

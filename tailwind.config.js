@@ -93,7 +93,7 @@ module.exports = {
 			...negative(theme('spacing'))
 		}),
 		fontFamily: {
-			circular: ['Circular Std'],
+			circular: ['Circular', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'sans-serif'],
 			sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'sans-serif'],
 			serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
 			mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],

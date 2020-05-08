@@ -1,5 +1,5 @@
 <template>
-	<div class="layout main">
+	<div class="layout main font-circular font-normal">
 		<wrapper>
 			<nuxt />
 		</wrapper>
@@ -7,13 +7,8 @@
 </template>
 
 <style lang="stylus">
-	.layout.main {
-		font-size 1.6rem
-
-		.__content-wrapper {
-
-		}
-	}
+.layout.main {
+}
 </style>
 
 <script>

@@ -31,15 +31,16 @@ const config = async () => {
 		 ** Global CSS
 		 */
 		css: [
+			'~/assets/styles/core/fonts.css',
 			'~/assets/styles/core/tailwind.css',
-			'~/assets/styles/main.styl'
+			'~/assets/styles/core/global.css'
 		],
 
 		/*
 		 ** Global variables & mixins
 		 */
 		styleResources: {
-			stylus: ['~/assets/styles/system.styl']
+			stylus: ['~/assets/styles/mixins/index.styl']
 		},
 
 		/*
