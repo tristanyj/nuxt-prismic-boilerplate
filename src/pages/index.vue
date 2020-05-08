@@ -1,7 +1,7 @@
 <template>
 	<div class="page index">
 		<container>
-			<h1 class="text-grey-700">
+			<h1 class="text-grey-700 font-circular font-black">
 				{{ $prismic.asText(content.title) }}
 			</h1>
 		</container>

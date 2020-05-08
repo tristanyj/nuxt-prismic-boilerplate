@@ -93,7 +93,10 @@ module.exports = {
 			...negative(theme('spacing'))
 		}),
 		fontFamily: {
-			//TODO: Ajouter fonts
+			circular: ['Circular Std'],
+			sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'sans-serif'],
+			serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+			mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
 		},
 		fontSize: {
 			// 12px
@@ -396,10 +399,17 @@ module.exports = {
 			'700': '700ms',
 			'1000': '1000ms',
 			'2000': '2000ms'
-		}
+		},
+		darkSelector: '.dark-mode'
 	},
-	variants: {},
-	plugins: [],
+	variants: {
+		backgroundColor: ['responsive', 'hover', 'focus', 'dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd'],
+		borderColor: ['responsive', 'hover', 'focus', 'dark', 'dark-focus', 'dark-focus-within'],
+		textColor: ['responsive', 'hover', 'focus', 'dark', 'dark-hover', 'dark-active', 'dark-placeholder']
+	},
+	plugins: [
+		require('tailwindcss-dark-mode')()
+	],
 	purge: {
 		// Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
 		enabled: process.env.NODE_ENV === 'production',
@@ -409,6 +419,9 @@ module.exports = {
 			'./src/pages/**/*.vue',
 			'./src/plugins/**/*.js',
 			'nuxt.config.js'
-		]
+		],
+		options: {
+			whitelist: ['dark-mode']
+		}
 	}
 }

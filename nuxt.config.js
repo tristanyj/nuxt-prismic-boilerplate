@@ -52,6 +52,15 @@ const config = async () => {
 		},
 
 		/*
+		 ** Color mode configuration
+		 */
+		colorMode: {
+			preference: 'system',
+			fallback: 'dark',
+			componentName: 'color-scheme'
+		},
+
+		/*
 		 ** Plugins to load before mounting the App
 		 */
 		plugins: [
@@ -77,6 +86,7 @@ const config = async () => {
 			'@nuxtjs/sitemap',
 			'@nuxtjs/style-resources',
 			'@nuxtjs/tailwindcss',
+			'@nuxtjs/color-mode',
 			'@nuxtjs/global-components',
 			'@nuxtjs/gtm',
 			'~/modules/static',
