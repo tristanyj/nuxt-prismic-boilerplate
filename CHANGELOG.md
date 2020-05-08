@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/tristanyj/nuxt-prismic-boilerplate/compare/v1.2.0...v1.3.0) (2020-05-08)
+
+
+### Features
+
+* **core:** revise css folder structure, update plopfile, update readme ([bc09211](https://github.com/tristanyj/nuxt-prismic-boilerplate/commit/bc0921192a5dff3efcd7726cae41145f30da5933))
+* **style:** add dark mode module, and tailwind color mode plugin ([65a16de](https://github.com/tristanyj/nuxt-prismic-boilerplate/commit/65a16dececac448fd60d13d22d8ac5dd0a0c9169))
+* **style:** add tailwind configuration ([bf870f7](https://github.com/tristanyj/nuxt-prismic-boilerplate/commit/bf870f728211290238a4310fed0f3f16f0ce801d))
+
+
+### Bug Fixes
+
+* **style:** fix purge css in production mode ([0aa31a9](https://github.com/tristanyj/nuxt-prismic-boilerplate/commit/0aa31a918e8ff0c141a3de11bd3b44c1c70d4fe4))
+
 ## [1.2.0](https://github.com/tristanyj/nuxt-prismic-boilerplate/compare/v1.1.0...v1.2.0) (2020-05-07)
 
 
