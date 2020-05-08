@@ -10,7 +10,7 @@
 		"start": "nuxt start",
 		"generate": "nuxt generate",
 		"analyze": "nuxt build --analyze",
-		"release": "standard-version git push --follow-tags origin",
+		"release": "standard-version && git push --follow-tags origin",
 		"commit": "git add . && commit",
 		"push": "git push origin",
 		"lint": "eslint --ext .js,.vue --ignore-path .gitignore --ignore-pattern src/modules/*/*.plugin.js --ignore-pattern plop-templates/component.vue --ignore-pattern plop-templates/page.vue ."
