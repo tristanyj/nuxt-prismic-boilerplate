@@ -42,7 +42,7 @@ async asyncData({ $prismic, app, error }) {
 
 ## Slices
 
-Here is how you can display slices from a Prismic document :
+Here is how you can display slices from a Prismic document.
 
 In a `.vue` component, after fetching your data, you can pass the slices to a `slices` component :
 
@@ -62,7 +62,7 @@ import imageSlice from '~/components/partials/slices/image-slice'
 
 export default {
 	props: {
-		slices: {
+		data: {
 			type: Array,
 			default: null
 		}
@@ -76,7 +76,7 @@ export default {
 ```html
 <template>
     <div class="slices">
-        <div class="slice" v-for="(slice, i) in slices" :key="'slice-' + i">
+        <div class="slice" v-for="(slice, i) in data" :key="'slice-' + i">
             <template v-if="slice.slice_type === 'text'">
                 <text-slice :slice="slice"/>
             </template>
