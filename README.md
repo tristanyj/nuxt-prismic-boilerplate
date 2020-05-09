@@ -39,10 +39,10 @@ Here are some useful commands :
 $ yarn commit
 
 # git push origin *branch*
-$ yarn push *insert branch*
+$ yarn push *insert current branch*
 
 # create a new release and push to git
-$ yarn release
+$ yarn release *insert current branch*
 ```
 
 ## Plop
