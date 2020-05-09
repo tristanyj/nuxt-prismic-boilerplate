@@ -110,6 +110,10 @@ Add this in prismic page json editor to enable dynamic head generation :
 
 For production, don't forget to add the .env variables to your hosting provider environment variables.
 
+## Extend
+
+This config is supposed to be quite minimalistic. The goal is to have it work out of the box to avoid tedious configuration on start. Therefore it purposefully lacks somes features. You can extend the functionalities of this boilerplate by looking at the `extend/` directory at the root of this project. It contains guides to add useful features that were not included in the base build.
+
 ## Help
 
 - [Nuxt Documentation](https://nuxtjs.org/api)
