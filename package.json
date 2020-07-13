@@ -63,7 +63,7 @@
 		"imagemin-svgo": "^7.1.0",
 		"nodemon": "^1.11.0",
 		"prettier": "^2.0.5",
-		"standard-version": "^7.1.0",
+		"standard-version": "^8.0.1",
 		"tailwindcss-dark-mode": "^1.1.4",
 		"webp-loader": "^0.6.0"
 	}
